@@ -13,7 +13,7 @@ require('dotenv').config({ path: './config/.env' });
 
 // cors setup for establishing connection b/w frontend and backend
 app.use(cors({
-    origin: ['http://127.0.0.1:5173', 'http://localhost:5173'],
+    origin: ['http://127.0.0.1:5173', 'http://localhost:5173',"https://jobfinder-frontend-six.vercel.app"],
     methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
     credentials: true
 }));
@@ -29,7 +29,9 @@ app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/"
 }));
-
+app.get("/",(req,res)=>{
+    res.send("Hello")
+})
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/job', jobRouter);
 app.use('/api/v1/application', applicationRouter);

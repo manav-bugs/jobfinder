@@ -1,12 +1,12 @@
 import React from "react";
 
-function Categories()  {
+function Categories() {
   const categories = [
     {
       id: 1,
       title: "Graphics & Design",
       subTitle: "305 Open Positions",
-      icon: "https://img.icons8.com/color/48/design--v1.png"
+      icon: "https://img.icons8.com/color/48/design--v1.png",
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ function Categories()  {
     {
       id: 4,
       title: "Backend Development",
-      subTitle: "1000+ Open Postions",
+      subTitle: "1000+ Open Positions",
       icon: "https://img.icons8.com/color/48/backend-development--v1.png",
     },
     {
@@ -51,17 +51,20 @@ function Categories()  {
       icon: "https://img.icons8.com/ultraviolet/40/controller.png",
     },
   ];
+  
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h3 className="text-xl font-bold m-4 border-2 border-red-500 p-2 bg-red-400">POPULAR CATEGORIES</h3>
-      <div className="grid grid-cols-4 gap-12">
+    <div className="flex flex-col justify-center items-center p-4">
+      <h3 className="text-xl font-bold mb-4 border-2 border-red-500 p-2 bg-red-400 text-white rounded-md">
+        POPULAR CATEGORIES
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-5xl">
         {categories.map((element) => {
           return (
-            <div key={element.id} className="flex flex-col justify-center items-center">
-              <img src={element.icon} alt="Logo" width="32" height="32"/>
-              <div className="text-xl">
-                <p className="font-bold">{element.title}</p>
-                <p>{element.subTitle}</p>
+            <div key={element.id} className="flex flex-col justify-center items-center p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-all">
+              <img src={element.icon} alt="Logo" width="48" height="48" className="mb-2" />
+              <div className="text-center">
+                <p className="font-bold text-lg">{element.title}</p>
+                <p className="text-sm text-gray-600">{element.subTitle}</p>
               </div>
             </div>
           );
@@ -69,6 +72,6 @@ function Categories()  {
       </div>
     </div>
   );
-};
+}
 
 export default Categories;

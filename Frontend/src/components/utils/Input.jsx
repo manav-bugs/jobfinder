@@ -8,7 +8,7 @@ function Input({ id, name, type, label, value, onChange, className }) {
             name={name}
             placeholder={label}
             value={value}
-            className={`${className} w-full sm:w-80 p-2 m-1 border-2 border-solid border-cyan-700 outline-none text-black rounded-md`}
+            className={`${className} w-full p-2 border-2 border-solid border-cyan-700 outline-none text-black rounded-md sm:w-80 md:w-96 lg:w-full`}
             onChange={onChange}
         />
     );
